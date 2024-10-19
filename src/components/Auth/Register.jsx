@@ -7,7 +7,6 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
 
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
@@ -21,12 +20,6 @@ const Register = () => {
         setLoading(true);
         try {
             const response = await account.create(ID.unique(), email, password, name);
-
-            // await account.updatePrefs({
-            //     phone: phone
-            // });
-
-            console.log('res : ', response);
 
             setSuccess(true);
             setError(null);
@@ -69,17 +62,6 @@ const Register = () => {
                             required
                         />
                     </div>
-                    {/* <div className="mb-4">
-                        <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            required
-                        />
-                    </div> */}
                     <div className="mb-6">
                         <label htmlFor="password" className="block text-gray-700 mb-2">Password</label>
                         <input
