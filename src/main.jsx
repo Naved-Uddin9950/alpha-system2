@@ -14,6 +14,8 @@ import App from './App';
 import ErrorPage from './utils/ErrorPage';
 import Home from './components/Home/Home';
 import ComingSoon from './utils/ComingSoon';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
         <Route path='' element={<Home />} />
         <Route path='coming-soon' element={<ComingSoon />} />
       </Route>
+      <Route path='register' element={<Register />} />
+      <Route path='login' element={<Login />} />
     </>
   )
 );
