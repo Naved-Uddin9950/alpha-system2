@@ -10,7 +10,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('Home');
 
   return (
-    <div className='w-full h-full min-h-screen dark:bg-[#131720] flex gap-2'>
+    <div className='w-full h-full min-h-screen dark:bg-[#131720] flex gap-2 py-12 md:py-20'>
       <Sidebar
         isCollapsed={isCollapsed} setCurrentPage={setCurrentPage}
         isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}
