@@ -16,6 +16,7 @@ import Home from './components/Home/Home';
 import ComingSoon from './utils/ComingSoon';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import VerifyAccount from './components/Auth/VerifyAccount';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path='register' element={<Register />} />
       <Route path='login' element={<Login />} />
+      <Route path="/verify" element={<VerifyAccount />} />
     </>
   )
 );
