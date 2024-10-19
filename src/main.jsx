@@ -13,12 +13,14 @@ import { Spin } from 'antd';
 import App from './App';
 import ErrorPage from './utils/ErrorPage';
 import Home from './components/Home/Home';
+import ComingSoon from './utils/ComingSoon';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<App />} errorElement={<ErrorPage />}>
         <Route path='' element={<Home />} />
+        <Route path='coming-soon' element={<ComingSoon />} />
       </Route>
     </>
   )

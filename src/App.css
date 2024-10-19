@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: "Rubik", sans-serif;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+/* Carousel Styles */
+.react-multi-carousel-item {
+    display: flex !important;
+    justify-content: center;
+}
+
+/* Utils */
+.text-shadow-red {
+    text-shadow: 0px 0px 15px #F00;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    /* border-bottom: 38px solid green; */
+    margin-right: 10px;
+}
+
+.masonry-grid {
+    column-count: 1;
+    column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 768px) {
+    .masonry-grid {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1024px) {
+    .masonry-grid {
+        column-count: 4;
+    }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+}
+
+.ant-modal-content {
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+/* Pagination */
+.ant-pagination-item-link svg {
+    color: white;
+}
+
+/* Animation Effects  */
+/* Live Button Animation */
+@keyframes disco {
+    0% {
+        background-color: gold;
+        color: deeppink;
+    }
+
+    50% {
+        background-color: deeppink;
+        color: gold;
+    }
+
+    100% {
+        background-color: gold;
+        color: deeppink;
+    }
+}
+
+.disco-effect {
+    animation: disco 3.5s infinite;
+}
+
+/* Border Hover Effect */
+.border-slider {
+    text-decoration: none;
+    color: #FF347B;
+    position: relative;
+}
+
+.border-slider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #FF347B;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.border-slider:hover::after {
+    width: 100%;
+}
+
+/* Border Animation */
+.border-animated {
+    text-shadow: 0 1px 0 #000;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle),
+            transparent 25%,
+            #08f,
+            #f03 99%,
+            transparent);
+    background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
+    background-position: center center;
+    -webkit-animation: bg-spin 3s linear infinite;
+    animation: bg-spin 3s linear infinite;
+}
+
+@-webkit-keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+.box:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+/* Loader */
+.loader {
+    width: 6rem;
+    height: 6rem;
+    display: grid;
+    color: #FF347B;
+    -webkit-mask: radial-gradient(circle 5px, #0000 90%, #000);
+    animation: sh3 1.5s infinite linear;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    background:
+        radial-gradient(farthest-side at bottom left, currentColor 94%, #0000) top left,
+        radial-gradient(farthest-side at top right, currentColor 94%, #0000) bottom right;
+    background-size: 63% 50%;
+    background-repeat: no-repeat;
+    -webkit-mask:
+        radial-gradient(65% 110% at bottom left, #0000 94%, #000) top left,
+        radial-gradient(65% 110% at top right, #0000 94%, #000) bottom right;
+    -webkit-mask-size: 62% 50%;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.loader:after {
+    transform: rotate(90deg);
+}
+
+@keyframes sh3 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+/* Custom profile dropdown */
+.dark .dark-dropdown .ant-dropdown-menu {
+    background-color: #202c3c !important;
+    color: white !important;
+    border: 1px solid #333;
+}
+
+.dark .dark-dropdown .ant-dropdown-menu-item {
+    color: white !important;
+}
