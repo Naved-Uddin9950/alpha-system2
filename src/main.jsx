@@ -17,12 +17,14 @@ import ComingSoon from './utils/ComingSoon';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import VerifyAccount from './components/Auth/VerifyAccount';
+import Status from './components/Status/Status';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<App />} errorElement={<ErrorPage />}>
         <Route path='' element={<Home />} />
+        <Route path='status' element={<Status />} />
         <Route path='coming-soon' element={<ComingSoon />} />
       </Route>
       <Route path='register' element={<Register />} />

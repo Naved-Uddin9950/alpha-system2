@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Activity, Award, Home, Target, Settings } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
     Sidebar,
     SidebarContent,
@@ -34,35 +35,31 @@ const AppSidebar = () => {
     const toggleTheme = () => {
         const newTheme = !darkMode;
         setDarkMode(newTheme);
-        const isDarkMode = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", newTheme);
+        localStorage.setItem("theme", newTheme ? "dark" : "light");
     };
 
     return (
-        <Sidebar className='border-none shadow-dark'>
-            <SidebarContent className='transition-colors bg-white dark:bg-gray-900 text-white dark:text-white'>
+        <Sidebar className="border-none shadow-dark">
+            <SidebarContent className="transition-colors bg-white dark:bg-gray-900 text-black dark:text-white">
                 <SidebarGroup>
-                    <SidebarGroupLabel className='text-gray-500 text-xl my-4 flex items-center gap-2'>
+                    <SidebarGroupLabel className="text-gray-500 text-xl my-4 flex items-center gap-2">
                         <Avatar>
                             <AvatarImage src="https://github.com/shadcn.png" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                         Shinigami
-                        <Switch
-                            // checked={document.documentElement.classList.contains("dark")}
-                            checked={darkMode}
-                            onCheckedChange={toggleTheme}
-                        />
+                        <Switch checked={darkMode} onCheckedChange={toggleTheme} />
                     </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild>
-                                        <a href={item.url} className="flex items-center gap-2 p-2 text-black dark:text-white dark:hover:bg-gray-800 rounded-md">
+                                        <Link to={item.url} className="flex items-center gap-2 p-2 text-black dark:text-white dark:hover:bg-gray-800 rounded-md">
                                             <item.icon className="w-5 h-5" />
                                             <span>{item.title}</span>
-                                        </a>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
